@@ -1,6 +1,10 @@
 package lotto;
 
+import org.kokodak.Randoms;
+
+import java.util.Collections;
 import java.util.List;
+
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -16,5 +20,12 @@ public class Lotto {
         }
     }
 
-    // TODO: 추가 기능 구현
+    public void printLotto(List<Integer> numbers){
+        for(int i=0;i<numbers.size();i++){
+            System.out.print(numbers.get(i)+" ");
+        }
+    }
+
+
+
 }
