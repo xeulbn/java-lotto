@@ -3,26 +3,28 @@ package lotto;
 
 import org.kokodak.Randoms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
+    private static List<Lotto> lottoList;
     public static void main(String[] args) {
         LottoInput input = new LottoInput();
 
-
         input.purchaseCost();
-        input.answerNumber();
-        input.bonusNumber();
 
         int lottoPrice = input.lottoPrice;
         System.out.println(lottoPrice);
 
-        for(int i=0;i<lottoPrice/1000;i++){
-            List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-            Lotto lotto = new Lotto(numbers);
-            lotto.printLotto(numbers);
-            System.out.println();
-        }
+        LottoController purchase = new LottoController();
+        lottoList=purchase.makeLottoList(lottoPrice/1000);
+
+
+        input.answerNumber(); //당첨번호 입력
+        input.bonusNumber(); //보너스 번호 입력
+
+
+
 
     }
 }
