@@ -16,27 +16,16 @@ public class Lotto {
         this.numbers = numbers;
     }
 
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
+
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException();
         }
     }
 
-    public void printLotto(List<Integer> numbers){
-        for(int i=0;i<numbers.size();i++){
-            System.out.print(numbers.get(i)+" ");
-        }
-    }
-
-    public int checkNumber(List<Integer> myNumbers){
-        int check=0;
-        for(int i=0;i<myNumbers.size();i++){
-            if(myNumbers.get(i)==numbers.get(i)){
-                check++;
-            }
-        }
-        return check;
-    }
 
 
 
