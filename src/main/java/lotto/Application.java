@@ -13,6 +13,7 @@ import static lotto.LottoInput.bonusNumber;
 public class Application {
     private static List<Lotto> lottoList;
     static int[] matchArray;
+    static int[] bonusArray;
 
     public static void main(String[] args) {
         LottoInput input = new LottoInput();
@@ -31,6 +32,9 @@ public class Application {
         System.out.println("당첨 통계");
         System.out.println("-----");
         matchArray=countOfMatch(lottoList,answerNumber);
+        bonusArray=bonusBallMatch(lottoList);
+        Result.letMatch();
+        Result.printResult();
 
 
 
