@@ -1,5 +1,8 @@
 package lotto;
 
+import static lotto.Application.matchArray;
+import static lotto.LottoInput.lottoPrice;
+
 public class Result {
 
     private static void printResult(){
@@ -12,6 +15,10 @@ public class Result {
     }
 
     private static void letMatch(){
+        for(int i=0;i<(lottoPrice/1000);i++){
+            if(matchArray[i]==3){
 
+            }
+        }
     }
 }

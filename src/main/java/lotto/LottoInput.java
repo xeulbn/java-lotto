@@ -10,7 +10,7 @@ public class LottoInput {
     static int bonusNumber;
 
     private static String[] inputArray;
-    static int[]answerNumber;
+    static int[] answerNumber;
 
     static List<Integer> lottoanswer;
 

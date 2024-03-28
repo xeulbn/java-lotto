@@ -11,8 +11,8 @@ import static lotto.LottoInput.*;
 public class LottoController {
     private static List <Integer> lottoNumberList;
     private static List<Integer> lotto = new ArrayList<>();
-    public static int[] matcharr;
-    public static int[] bonusMatch;
+    public static int[] matcharr=new int[lottoPrice/1000];
+    public static int[] bonusMatch=new int[lottoPrice/1000];
 
     private static List<Lotto> lottoList;
     public static List<Integer> setRandomNum(){
@@ -38,38 +38,37 @@ public class LottoController {
         return lottoList;
     }
 
-    static int countOfMatch(Lotto lottoNumber, int[] answernumber){
-        int matchCount=0;
+
+    static int[] countOfMatch(List<Lotto> lottoNumber, int[] answernumber){
+
+        for(int i=0; i<(lottoPrice/1000);i++){
+            matcharr[i]=matchOneByOne(lottoNumber.get(i),answernumber);
+        }
+        return matcharr;
+    }
+
+    static int matchOneByOne(Lotto lottoNum, int[] answerNum){
+        int matchcnt=0;
         for(int i=0;i<6;i++){
             for(int j=0;j<6;j++){
-                if(lottoNumber.getNumbers().get(j)==answernumber[j]){
-                    matchCount++;
+                if(lottoNum.getNumbers().get(i)==answerNum[j]){
+                    matchcnt++;
                 }
             }
         }
-        System.out.println(matchCount);
-        return matchCount;
+        return matchcnt;
     }
 
-    static int bonusBallMatch(Lotto lottoNumber){
-        int bonusMatchCount=0;
+    static int[] bonusBallMatch(List<Lotto> lottoNumber){
+
         for(int i=0;i<6;i++){
-            if(bonusNumber==lottoNumber.getNumbers().get(i)){
+            int bonusMatchCount=0;
+            if(bonusNumber==lottoNumber.get(i).getNumbers().get(i)){
                 bonusMatchCount++;
             }
+            bonusMatch[i]=bonusMatchCount;
         }
-        return bonusMatchCount;
-    }
-
-    static void match(List<Lotto> lottoList){
-        for(int i=0;i<(lottoPrice/1000);i++){
-            matcharr[i]=countOfMatch(lottoList.get(i),answerNumber);
-        }
-
-        for(int i=0;i<(lottoPrice/1000);i++){
-            bonusMatch[i]=bonusBallMatch(lottoList.get(i));
-        }
-
+        return bonusMatch;
     }
 
 }

@@ -6,11 +6,13 @@ import org.kokodak.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-import static lotto.LottoController.match;
-import static lotto.LottoController.matcharr;
+import static lotto.LottoController.*;
+import static lotto.LottoInput.answerNumber;
+import static lotto.LottoInput.bonusNumber;
 
 public class Application {
     private static List<Lotto> lottoList;
+    static int[] matchArray;
 
     public static void main(String[] args) {
         LottoInput input = new LottoInput();
@@ -25,13 +27,10 @@ public class Application {
         input.answerNumber(); //당첨번호 입력
         input.bonusNumber(); //보너스 번호 입력
         System.out.println();
+        matchArray=new int[lottoPrice/1000];
         System.out.println("당첨 통계");
         System.out.println("-----");
-        match(lottoList);
-        for(int i=0;i<6;i++){
-            System.out.println(matcharr[i]);
-        }
-
+        matchArray=countOfMatch(lottoList,answerNumber);
 
 
 
