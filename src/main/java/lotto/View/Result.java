@@ -1,8 +1,8 @@
-package lotto;
+package lotto.View;
 
-import static lotto.Application.bonusArray;
-import static lotto.Application.matchArray;
-import static lotto.LottoInput.lottoPrice;
+import static lotto.Controller.Application.bonusArray;
+import static lotto.Controller.Application.matchArray;
+import static lotto.View.LottoInput.lottoPrice;
 
 public class Result {
 
@@ -10,7 +10,7 @@ public class Result {
 
     static double plus;
 
-    static void printResult(){
+    public static void printResult(){
         System.out.println("3개 일치 (5000원) - "+result[0]);
         System.out.println("4개 일치 (50,000원) - "+result[1]);
         System.out.println("5개 일치 (1,500,000원) - "+result[2]);
@@ -19,7 +19,7 @@ public class Result {
         System.out.println("총 수익률은 "+plus+"%입니다.");
     }
 
-    static void letMatch(){
+    public static void letMatch(){
 
         for(int i=0;i<(lottoPrice/1000);i++){
             if(matchArray[i]==3){

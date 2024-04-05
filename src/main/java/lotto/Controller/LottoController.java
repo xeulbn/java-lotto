@@ -1,12 +1,13 @@
-package lotto;
+package lotto.Controller;
 
+import lotto.Model.Lotto;
 import org.kokodak.Randoms;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static lotto.LottoInput.*;
+import static lotto.View.LottoInput.*;
 
 public class LottoController {
     private static List <Integer> lottoNumberList;

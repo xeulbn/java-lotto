@@ -1,4 +1,4 @@
-package lotto;
+package lotto.View;
 
 import org.kokodak.Console;
 
@@ -7,10 +7,10 @@ import java.util.List;
 public class LottoInput {
 
     public static int lottoPrice;
-    static int bonusNumber;
+    public static int bonusNumber;
 
     private static String[] inputArray;
-    static int[] answerNumber;
+    public static int[] answerNumber;
 
     static List<Integer> lottoanswer;
 

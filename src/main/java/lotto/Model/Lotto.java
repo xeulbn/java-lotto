@@ -1,4 +1,4 @@
-package lotto;
+package lotto.Model;
 
 import org.kokodak.Randoms;
 

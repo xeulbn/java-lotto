@@ -1,19 +1,19 @@
-package lotto;
+package lotto.Controller;
 
 
-import org.kokodak.Randoms;
+import lotto.Model.Lotto;
+import lotto.View.Result;
+import lotto.View.LottoInput;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static lotto.LottoController.*;
-import static lotto.LottoInput.answerNumber;
-import static lotto.LottoInput.bonusNumber;
+import static lotto.Controller.LottoController.*;
+import static lotto.View.LottoInput.answerNumber;
 
 public class Application {
     private static List<Lotto> lottoList;
-    static int[] matchArray;
-    static int[] bonusArray;
+    public static int[] matchArray;
+    public static int[] bonusArray;
 
     public static void main(String[] args) {
         LottoInput input = new LottoInput();
